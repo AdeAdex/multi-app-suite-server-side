@@ -2,10 +2,12 @@
 
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors'); // Add CORS middleware
 const app = express();
 const port = 3001;
 
 app.use(express.json());
+app.use(cors()); // Enable CORS for all routes
 
 app.get('/api/football-matches', async (req, res) => {
   try {
