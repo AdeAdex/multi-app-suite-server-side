@@ -2,7 +2,7 @@
 
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors'); // Add CORS middleware
+const cors = require('cors');
 const app = express();
 const port = 3001;
 
@@ -27,3 +27,4 @@ app.get('/api/football-matches', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
