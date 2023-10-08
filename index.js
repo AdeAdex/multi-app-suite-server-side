@@ -11,7 +11,7 @@ app.use(express.json());
 // app.use(cors());
 
 const corsOptions = {
-  origin: 'https://multi-app-suite.vercel.app/', // Replace with your front-end URL
+  origin: 'https://multi-app-suite.vercel.app/',
 };
 
 app.use(cors(corsOptions));
