@@ -1,4 +1,5 @@
 //backend
+
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -7,15 +8,12 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-// Enable CORS for all routes and origins
-// app.use(cors());
-
+// Enable CORS for specific origin
 const corsOptions = {
-  origin: 'https://multi-app-suite.vercel.app/',
+  origin: 'https://multi-app-suite.vercel.app',
 };
 
 app.use(cors(corsOptions));
-
 
 app.get('/api/football-matches', async (req, res) => {
   try {
