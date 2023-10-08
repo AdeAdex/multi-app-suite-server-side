@@ -8,7 +8,6 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-// Enable CORS for all routes
 app.use(cors());
 
 app.get('/api/football-matches', async (req, res) => {
