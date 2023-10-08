@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Enable CORS for specific origin
 const corsOptions = {
-  origin: ["https://multi-app-suite.vercel.app", "http://localhost:3000"],
+  origin: ["https://adex-multi-app-suite.vercel.app/football-matches", "http://localhost:3000"],
 };
 
 app.use(cors(corsOptions));
