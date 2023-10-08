@@ -8,7 +8,14 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 
 // Enable CORS for all routes and origins
-app.use(cors());
+// app.use(cors());
+
+const corsOptions = {
+  origin: 'https://multi-app-suite.vercel.app/', // Replace with your front-end URL
+};
+
+app.use(cors(corsOptions));
+
 
 app.get('/api/football-matches', async (req, res) => {
   try {
