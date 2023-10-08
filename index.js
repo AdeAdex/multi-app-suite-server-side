@@ -10,8 +10,9 @@ app.use(express.json());
 
 // Enable CORS for specific origin
 const corsOptions = {
-  origin: 'https://multi-app-suite.vercel.app',
+  origin: ['https://multi-app-suite.vercel.app', 'http://localhost:3000/'],
 };
+
 
 app.use(cors(corsOptions));
 
