@@ -8,7 +8,6 @@ const port = process.env.PORT;
 
 app.use(express.json());
 
-// Enable CORS for specific origin
 const corsOptions = {
   origin: ["https://adex-multi-app-suite.vercel.app", "http://localhost:3000"],
 };
