@@ -18,7 +18,7 @@ app.use(cors(corsOptions));
 app.get("/api/football-matches", async (req, res) => {
   try {
     const response = await axios.get(
-      "https://api.football-data.org/v4/competitions/PL/matches?matchday=11",
+      "https://api.football-data.org/v4/matches",
       {
         headers: {
           "X-Auth-Token": "70f5fc17b1374351b458e3f71cb76249",
