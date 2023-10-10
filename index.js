@@ -12,7 +12,7 @@ const port = process.env.PORT || 4001;
 app.use(express.json());
 
 const corsOptions = {
-  origin: ["https://adex-multi-app-suite.vercel.app", "http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://adex-multi-app-suite.vercel.app"],
 };
 
 app.use(cors(corsOptions));
