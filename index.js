@@ -68,7 +68,7 @@ app.get("/api/football-matches", async (req, res) => {
 
     // Respond with the data from the API-Football endpoint
     console.log(response);
-    res.json(response.data);
+    res.json(response);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
