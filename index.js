@@ -42,6 +42,22 @@
 // });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 require('dotenv').config();
 const express = require("express");
 const axios = require("axios");
@@ -71,8 +87,8 @@ app.get("/api/football-matches", async (req, res) => {
       res.status(500).json({ error: "API Error" });
       return;
     }
-    console.log(response);
-    res.json(response);
+    console.log(response.data); // Log the response data
+    res.json(response.data);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ error: "Internal Server Error" });
