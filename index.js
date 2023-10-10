@@ -66,7 +66,11 @@ app.get("/api/football-matches", async (req, res) => {
       }
     });
 
-    // Respond with the data from the API-Football endpoint
+    if (response.data.error) {
+      console.error("API Error:", response.data.error);
+      res.status(500).json({ error: "API Error" });
+      return;
+    }
     console.log(response);
     res.json(response);
   } catch (error) {
