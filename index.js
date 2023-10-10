@@ -29,6 +29,7 @@ app.get("/api/football-matches", async (req, res) => {
       }
     );
 
+  console.log("adex adex");
     console.log(response);
     res.json(response.data);
   } catch (error) {
