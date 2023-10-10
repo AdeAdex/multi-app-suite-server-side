@@ -4,7 +4,7 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 4001;
+const port = process.env.PORT;
 
 app.use(express.json());
 
