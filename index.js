@@ -4,7 +4,7 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4001;
 
 app.use(express.json());
 
@@ -26,7 +26,7 @@ app.get("/api/football-matches", async (req, res) => {
       }
     );
 
-    console.log(response);
+    console.log(response, "adex");
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching data:", error);
