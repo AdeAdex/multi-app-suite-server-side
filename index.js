@@ -1,10 +1,13 @@
 //backend
 
+require('dotenv').config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4001;
+
+
 
 app.use(express.json());
 
@@ -15,6 +18,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/api/football-matches", async (req, res) => {
+  console.log("adex");
   try {
     const response = await axios.get(
       "https://api.football-data.org/v4/matches",
@@ -25,7 +29,7 @@ app.get("/api/football-matches", async (req, res) => {
       }
     );
 
-    console.log(response, "adex");
+    console.log(response);
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching data:", error);
