@@ -5,13 +5,13 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || process.env.PORT2;
 
 
 app.use(express.json());
 
 const corsOptions = {
-  origin: ["http://localhost:4000", "https://adex-multi-app-suite.vercel.app"],
+  origin: [process.env.CORS_ORIGIN_LOCAL, process.env.CORS_ORIGIN_PROD],
 };
 
 app.use(cors(corsOptions));
@@ -23,13 +23,11 @@ app.get("/api/football-matches", async (req, res) => {
       "https://api.football-data.org/v4/matches",
       {
         headers: {
-          "X-Auth-Token": "70f5fc17b1374351b458e3f71cb76249",
+          "X-Auth-Token": process.env.X_AUTH_TOKEN,
         },
       }
     );
 
-  console.log("adex adex");
-    console.log(response);
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching data:", error);
